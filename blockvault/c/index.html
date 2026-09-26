@@ -53,7 +53,10 @@
   var PKG = "com.littlejoygames.blockvault";
   var q = new URLSearchParams(location.search);
   var m = q.get("m"), s = parseInt(q.get("s"), 10), n = (q.get("n") || "").slice(0, 24);
-  var isChallenge = (m === "l" || m === "d" || m === "e") && !isNaN(s);
+  // Daily and Endless only. Campaign levels are deliberately not challengeable:
+  // a link must not drop a new player onto level 1,873, nor skip the campaign.
+  // Level wins share a brag card and a plain install link instead.
+  var isChallenge = (m === "d" || m === "e") && !isNaN(s);
 
   // Everything after "?" travels unchanged into the app, either through the App
   // Link below or through the Play install referrer (key "bvc").
@@ -67,7 +70,6 @@
   if (isChallenge) {
     text("who", (n || "Your friend") + " scored");
     text("score", fmt(s));
-    if (m === "l") text("board", "ON LEVEL " + fmt(parseInt(q.get("l"), 10) || 1));
     if (m === "e") text("board", "IN ENDLESS MODE");
     if (m === "d") {
       var d = parseInt(q.get("d"), 10);
