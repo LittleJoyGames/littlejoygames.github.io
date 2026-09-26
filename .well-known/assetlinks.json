@@ -1,0 +1,12 @@
+[
+  {
+    "relation": ["delegate_permission/common.handle_all_urls"],
+    "target": {
+      "namespace": "android_app",
+      "package_name": "com.littlejoygames.blockvault",
+      "sha256_cert_fingerprints": [
+        "D7:10:81:28:2B:7D:C6:62:FD:E9:1C:77:DE:BF:A1:E9:0C:CF:7B:9B:DE:B5:EB:57:7D:BB:71:31:38:13:CB:E7"
+      ]
+    }
+  }
+]
