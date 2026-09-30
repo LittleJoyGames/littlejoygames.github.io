@@ -4,17 +4,17 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="theme-color" content="#05060d">
-  <meta name="description" content="Block Vault is a free neon block puzzle for Android with 2,400 levels, chain reactions, Vault Rush, Daily Drops and unlockable Vault Collections.">
-  <meta property="og:title" content="Block Puzzle: Block Vault">
-  <meta property="og:description" content="Clear lines, trigger chain reactions and unlock four Vault Collections across 2,400 increasingly challenging puzzle levels.">
+  <meta name="description" content="Star Assault is a free neon galaxy shooter for Android with 200 stages, 20 bosses, 7 ships with ultimate skills, Boss Rush, Endless Assault and a Daily Challenge.">
+  <meta property="og:title" content="Star Assault: Galaxy Shooter">
+  <meta property="og:description" content="Blast through 200 stages across 10 sectors, face a boss every 10 stages and power up 7 ships with ultimate skills, drones and weapon cores.">
   <meta property="og:type" content="website">
-  <meta property="og:url" content="https://littlejoygames.github.io/blockvault/">
-  <meta property="og:image" content="https://littlejoygames.github.io/blockvault/assets/og-card.png">
+  <meta property="og:url" content="https://littlejoygames.github.io/starassault/">
+  <meta property="og:image" content="https://littlejoygames.github.io/starassault/assets/og-card.png">
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:image" content="https://littlejoygames.github.io/blockvault/assets/og-card.png">
-  <link rel="canonical" href="https://littlejoygames.github.io/blockvault/">
+  <meta name="twitter:image" content="https://littlejoygames.github.io/starassault/assets/og-card.png">
+  <link rel="canonical" href="https://littlejoygames.github.io/starassault/">
   <link rel="icon" href="assets/icon-192.png">
-  <title>Block Puzzle: Block Vault | Free Android Game</title>
+  <title>Star Assault: Galaxy Shooter | Free Android Game</title>
   <style>
     :root {
       --void: #05060d;
@@ -43,7 +43,7 @@
       line-height: 1.6;
       overflow-x: hidden;
     }
-    img { display: block; max-width: 100%; }
+    img { display: block; max-width: 100%; height: auto; }
     a { color: var(--cyan); text-decoration: none; }
     a:hover { text-decoration: underline; }
     .wrap { width: min(1080px, calc(100% - 40px)); margin-inline: auto; }
@@ -60,7 +60,7 @@
     }
     .hero-grid {
       display: grid;
-      grid-template-columns: 1.15fr .85fr;
+      grid-template-columns: 1fr 1fr;
       gap: 48px;
       align-items: center;
     }
@@ -253,32 +253,22 @@
     .mode h3 { margin: 14px 0 7px; font-size: 1.08rem; }
     .mode p { margin: 0; color: var(--dim); font-size: .9rem; }
 
-    .learn-grid { display: grid; grid-template-columns: .8fr 1.2fr; gap: 40px; align-items: start; }
-    .lesson { display: grid; gap: 14px; counter-reset: lesson; }
-    .lesson-step {
-      position: relative;
-      padding: 20px 20px 20px 68px;
-      border: 1px solid var(--line);
-      border-radius: 18px;
-      background: rgba(20, 26, 49, .72);
-    }
-    .lesson-step::before {
-      counter-increment: lesson;
-      content: counter(lesson);
-      position: absolute;
-      left: 18px;
-      top: 20px;
-      width: 34px;
-      height: 34px;
+    /* ------------------------------------------------------------- gallery */
+    .gallery {
       display: grid;
-      place-items: center;
-      border-radius: 10px;
-      background: linear-gradient(135deg, var(--cyan), var(--violet));
-      color: var(--void);
-      font-weight: 900;
+      grid-template-columns: repeat(6, 1fr);
+      gap: 14px;
     }
-    .lesson-step h3 { margin: 0 0 4px; font-size: 1rem; }
-    .lesson-step p { margin: 0; color: var(--dim); font-size: .9rem; }
+    .gallery figure { margin: 0; }
+    .gallery img {
+      width: 100%;
+      aspect-ratio: 9 / 16;
+      object-fit: cover;
+      border: 1px solid rgba(0, 229, 255, .2);
+      border-radius: 16px;
+      box-shadow: 0 18px 40px rgba(0, 0, 0, .5);
+    }
+    .gallery figcaption { margin-top: 10px; color: var(--faint); font-size: .78rem; text-align: center; }
 
     .final-cta {
       margin-top: 10px;
@@ -304,9 +294,10 @@
 
     @media (max-width: 900px) {
       .hero-grid { grid-template-columns: 1fr; gap: 34px; }
-      .cards, .new-grid, .learn-grid { grid-template-columns: 1fr; }
+      .cards, .new-grid { grid-template-columns: 1fr; }
       .modes { grid-template-columns: repeat(2, 1fr); }
       .stats { grid-template-columns: repeat(2, 1fr); }
+      .gallery { grid-template-columns: repeat(3, 1fr); }
     }
     @media (max-width: 560px) {
       .hero { padding-top: 58px; }
@@ -314,6 +305,7 @@
       .stats, .modes { grid-template-columns: 1fr 1fr; gap: 10px; }
       .stat { padding: 16px 10px; }
       .stat b { font-size: 1.3rem; }
+      .gallery { grid-template-columns: 1fr 1fr; gap: 10px; }
       .feature-panel, .final-cta { padding: 26px 22px; }
       .btn { width: 100%; justify-content: center; }
     }
@@ -327,62 +319,63 @@
   <header class="hero">
     <div class="wrap hero-grid">
       <div>
-        <span class="eyebrow">Version 2.13 · Android · Free</span>
-        <h1>Clear the grid. <span class="grad">Crack the vault.</span></h1>
-        <p class="lede">Place blocks, blast lines and set off chain reactions across 2,400
-        puzzle levels. Play the campaign at your own pace, then unlock new block styles
-        through Vault Collections.</p>
+        <span class="eyebrow">Version 1.1 · Android · Free</span>
+        <h1>Hold the line. <span class="grad">Blast the galaxy.</span></h1>
+        <p class="lede">Pilot a neon starfighter through 200 stages across 10 sectors. Swarms fly in
+        formation, dive at your ship and fill the screen with bullets, and every tenth stage ends
+        with a boss fight.</p>
         <div class="cta-row">
-          <a class="btn" href="https://play.google.com/store/apps/details?id=com.littlejoygames.blockvault" id="play-link" rel="noopener">Get it on Google Play</a>
-          <a class="btn ghost" href="#new">See what’s new</a>
+          <a class="btn" href="https://play.google.com/store/apps/details?id=com.starassault.game" id="play-link" rel="noopener">Get it on Google Play</a>
+          <a class="btn ghost" href="#arsenal">See the arsenal</a>
         </div>
-        <p class="note">Available now · Free to play · Offline campaign · Contains ads</p>
+        <p class="note">Free to play · Plays offline · No account needed · Contains ads</p>
       </div>
       <div class="shot">
-        <img src="assets/feature.png" alt="Block Vault gameplay — a neon 8x8 grid part-filled with coloured blocks" width="1024" height="500">
+        <img src="assets/feature.png" alt="Star Assault screenshots: a Phoenix Swarm missile skill, the title screen, and a boss fight against the Viridian Hive-Queen" width="1024" height="500">
       </div>
     </div>
   </header>
 
   <div class="wrap">
     <div class="stats">
-      <div class="stat"><b class="c1">2,400</b><span>Levels</span></div>
-      <div class="stat"><b class="c2">24</b><span>Districts</span></div>
-      <div class="stat"><b class="c3">4</b><span>Collections</span></div>
-      <div class="stat"><b class="c4">Offline</b><span>Campaign</span></div>
+      <div class="stat"><b class="c1">200</b><span>Stages</span></div>
+      <div class="stat"><b class="c2">20</b><span>Bosses</span></div>
+      <div class="stat"><b class="c3">7</b><span>Ships</span></div>
+      <div class="stat"><b class="c4">4</b><span>Game modes</span></div>
     </div>
   </div>
 
-  <section id="new">
+  <section id="arsenal">
     <div class="wrap">
-      <p class="section-kicker">New in version 2.13</p>
-      <h2>A new reason to open the Vault</h2>
-      <p class="sub">Learn by playing, collect something every day, and turn your progress into
-      block styles that make the board feel like yours.</p>
+      <p class="section-kicker">Build your arsenal</p>
+      <h2>Seven ships. Seven ways to fight.</h2>
+      <p class="sub">Every ship has its own weapon and its own ultimate skill. Power it up during a
+      stage, upgrade it between stages, and stack a weapon core on top.</p>
 
       <div class="new-grid">
         <article class="feature-panel">
-          <p class="section-kicker">Vault Collections</p>
-          <h3>Four collections.<br>A style worth earning.</h3>
-          <p>Win on different days to unlock Glass, Circuit, Prism and Monolith blocks. Every
-          play day pays a booster or coins, and missing a day never erases your progress.</p>
-          <div class="reward-row" aria-label="Vault Collection styles">
-            <span class="reward-chip"><i style="background:#b6fff3;color:#00e5ff"></i>Glass</span>
-            <span class="reward-chip"><i style="background:#00ff9d;color:#00ff9d"></i>Circuit</span>
-            <span class="reward-chip"><i style="background:#ff2d95;color:#ff2d95"></i>Prism</span>
-            <span class="reward-chip"><i style="background:#77819b;color:#77819b"></i>Monolith</span>
+          <p class="section-kicker">Ultimate skills</p>
+          <h3>Charge it up.<br>Clear the screen.</h3>
+          <p>Kills and boss damage fill your skill meter. Hit SKILL and unleash your ship's special,
+          from a hurricane of bullets to a storm of 48 seeking missiles.</p>
+          <div class="reward-row" aria-label="Ultimate skills">
+            <span class="reward-chip"><i style="background:#00e5ff;color:#00e5ff"></i>Starburst Barrage</span>
+            <span class="reward-chip"><i style="background:#ff2d95;color:#ff2d95"></i>Phoenix Swarm</span>
+            <span class="reward-chip"><i style="background:#7c4dff;color:#7c4dff"></i>Singularity Cannon</span>
+            <span class="reward-chip"><i style="background:#ffc400;color:#ffc400"></i>Hyper Beam</span>
+            <span class="reward-chip"><i style="background:#00ff9d;color:#00ff9d"></i>Thunderstorm</span>
           </div>
         </article>
         <div class="stack">
           <article class="mini-feature">
-            <b>Hands-on from move one</b>
-            <p>A three-step playable intro teaches your first line clear, double clear and chain
-            reaction before level one begins.</p>
+            <b>Weapon cores</b>
+            <p>Enemies and bosses drop eight temporary secondary guns, including railgun, orbiting
+            plasma saws, nova pulse and ricochet bolts, which fire alongside your main weapon.</p>
           </article>
           <article class="mini-feature">
-            <b>Daily Drops that grow with you</b>
-            <p>Keep your streak alive to advance through longer, richer reward cycles. Miss a
-            day and the cycle restarts—your Vault Collection progress stays safe.</p>
+            <b>Drones, upgrades and power-ups</b>
+            <p>Bring one of 4 support drones, invest in 9 permanent upgrades, and grab shields,
+            overdrive, wingmen, magnets and bombs mid-fight.</p>
           </article>
         </div>
       </div>
@@ -391,30 +384,30 @@
 
   <section class="band">
     <div class="wrap">
-      <p class="section-kicker">Choose your pace</p>
-      <h2>Relaxed campaign or ticking clock</h2>
-      <p class="sub">The 2,400-level campaign has no timer. When you want pressure, Vault Rush
-      is waiting—with other ways to play every day.</p>
+      <p class="section-kicker">Choose your battle</p>
+      <h2>Campaign, chaos or pure bosses</h2>
+      <p class="sub">Work through the campaign sector by sector, or jump into a mode built for a
+      quick, intense run.</p>
       <div class="modes">
         <article class="mode" style="--accent:#00e5ff">
-          <small>2,400 levels</small>
+          <small>200 stages</small>
           <h3>Campaign</h3>
-          <p>Explore 24 districts, four goal types, Vault Runs and Overload bosses at your own pace.</p>
+          <p>Ten sectors, each with its own colours, planets and alien designs. Earn up to 3 stars per stage.</p>
         </article>
         <article class="mode" style="--accent:#ff2d95">
-          <small>Beat the clock</small>
-          <h3>Vault Rush</h3>
-          <p>Clear waves, earn time, grow your coin pot and decide when to bank it.</p>
-        </article>
-        <article class="mode" style="--accent:#ffc400">
-          <small>Same worldwide</small>
-          <h3>Daily Challenge</h3>
-          <p>Take on one shared board each day and keep your win streak alive.</p>
+          <small>Back to back</small>
+          <h3>Boss Rush</h3>
+          <p>Face the bosses one after another, with no waves in between.</p>
         </article>
         <article class="mode" style="--accent:#00ff9d">
-          <small>Chase your best</small>
-          <h3>Endless</h3>
-          <p>No goal and no move limit—keep the grid alive for as long as you can.</p>
+          <small>How long can you last?</small>
+          <h3>Endless Assault</h3>
+          <p>Wave after wave, getting harder each time. Chase your best score.</p>
+        </article>
+        <article class="mode" style="--accent:#ffc400">
+          <small>New every day</small>
+          <h3>Daily Challenge</h3>
+          <p>A fresh run each day with its own reward.</p>
         </article>
       </div>
     </div>
@@ -422,67 +415,58 @@
 
   <section>
     <div class="wrap">
-      <p class="section-kicker">More than a line clear</p>
-      <h2>Built for people who actually like puzzles</h2>
-      <p class="sub">Every mode rewards planning. Different objectives, layered obstacles and
-      explosive chain reactions keep the same simple rules feeling fresh.</p>
+      <p class="section-kicker">Built for shooter fans</p>
+      <h2>Classic arcade action, modern neon glow</h2>
+      <p class="sub">Formation attacks inspired by arcade classics meet bullet-hell bosses, a punchy
+      combo system and effects that make every explosion count.</p>
 
       <div class="cards">
         <article class="card">
-          <div class="dot"><i style="background:#00e5ff"></i><i style="background:#ff2d95"></i><i style="background:#ffc400"></i><i style="background:#00ff9d"></i></div>
-          <h3>Four ways to win</h3>
-          <p>Hit a score, clear lines, shatter frozen blocks or dig out every energy core.</p>
+          <div class="dot"><i style="background:#ff2d95"></i><i style="background:#ff6f00"></i><i style="background:#ffc400"></i><i style="background:#ff2d95"></i></div>
+          <h3>Bosses with a temper</h3>
+          <p>20 unique bosses with three rage phases and attacks such as spirals, sweeping lasers, homing orbs and bullet walls.</p>
         </article>
         <article class="card">
-          <div class="dot"><i style="background:#ff2d95"></i><i style="background:#ff2d95"></i><i style="background:#ff6f00"></i><i style="background:#ffc400"></i></div>
-          <h3>Chain reactions</h3>
-          <p>Trigger a primed block and its blast can set off the next one, clearing the board in a cascade.</p>
+          <div class="dot"><i style="background:#00e5ff"></i><i style="background:#7c4dff"></i><i style="background:#7c4dff"></i><i style="background:#00e5ff"></i></div>
+          <h3>14 enemy classes</h3>
+          <p>Aliens swoop in along curved paths, lock into 7 formation shapes, then peel off to dive-bomb you.</p>
         </article>
         <article class="card">
-          <div class="dot"><i style="background:#7c4dff"></i><i style="background:#00e5ff"></i><i style="background:#7c4dff"></i><i style="background:#00e5ff"></i></div>
-          <h3>Combos with a payoff</h3>
-          <p>Clear multiple lines or clear on consecutive moves. Vault Runs push the multiplier beyond the usual x4.</p>
+          <div class="dot"><i style="background:#ffc400"></i><i style="background:#ff2d95"></i><i style="background:#ff2d95"></i><i style="background:#ffc400"></i></div>
+          <h3>Combos and crits</h3>
+          <p>Keep the kills coming to build a combo multiplier, and land critical hits for extra damage.</p>
         </article>
         <article class="card">
-          <div class="dot"><i style="background:#00ff9d"></i><i style="background:#00e5ff"></i><i style="background:#00ff9d"></i><i style="background:#00e5ff"></i></div>
-          <h3>Fair piece trays</h3>
-          <p>The game avoids dealing three impossible pieces. When a run ends, it comes down to the choices you made.</p>
+          <div class="dot"><i style="background:#00ff9d"></i><i style="background:#00e5ff"></i><i style="background:#00e5ff"></i><i style="background:#00ff9d"></i></div>
+          <h3>Smooth one-finger controls</h3>
+          <p>Drag anywhere to steer while your ship fires automatically. A bomb button is there for emergencies.</p>
         </article>
         <article class="card">
-          <div class="dot"><i style="background:#ff2d95"></i><i style="background:#ffc400"></i><i style="background:#ff2d95"></i><i style="background:#ffc400"></i></div>
-          <h3>Helpful boosters</h3>
-          <p>Use Hint, Smasher, Shuffle and Undo when you need a second look or another chance.</p>
+          <div class="dot"><i style="background:#ffc400"></i><i style="background:#00ff9d"></i><i style="background:#ffc400"></i><i style="background:#00ff9d"></i></div>
+          <h3>Rewards every day</h3>
+          <p>A 50-day login calendar, a lucky spin, supply crates and 25 achievements to chase.</p>
         </article>
         <article class="card">
-          <div class="dot"><i style="background:#00e5ff"></i><i style="background:#7c4dff"></i><i style="background:#ff2d95"></i><i style="background:#00ff9d"></i></div>
-          <h3>Play offline</h3>
-          <p>The full campaign works without Wi-Fi, an account or a login. Your progress stays on your device.</p>
+          <div class="dot"><i style="background:#7c4dff"></i><i style="background:#ff2d95"></i><i style="background:#00e5ff"></i><i style="background:#ffc400"></i></div>
+          <h3>Neon effects</h3>
+          <p>Bloom lighting, shockwaves, particle explosions and parallax starfields. Turn HD effects off for longer battery life.</p>
         </article>
       </div>
     </div>
   </section>
 
-  <section id="how" class="band">
-    <div class="wrap learn-grid">
-      <div>
-        <p class="section-kicker">Learn by doing</p>
-        <h2>Your first breakthroughs happen before level one</h2>
-        <p class="sub">The new playable introduction uses the real game board and includes a
-        one-tap placement option whenever you want a nudge.</p>
-      </div>
-      <div class="lesson">
-        <article class="lesson-step">
-          <h3>Make your first clear</h3>
-          <p>Place a block to complete a line and open space on the grid.</p>
-        </article>
-        <article class="lesson-step">
-          <h3>Clear two lines at once</h3>
-          <p>Read the whole board and discover why one placement can be worth two.</p>
-        </article>
-        <article class="lesson-step">
-          <h3>Set off a chain reaction</h3>
-          <p>Crack a primed block and watch its blast travel through the board.</p>
-        </article>
+  <section id="screens" class="band">
+    <div class="wrap">
+      <p class="section-kicker">Screenshots</p>
+      <h2>See it in action</h2>
+      <p class="sub">Real in-game captures, straight from the game.</p>
+      <div class="gallery">
+        <figure><img src="assets/shot-title.jpg" alt="Star Assault title screen" width="540" height="960" loading="lazy"><figcaption>Launch bay</figcaption></figure>
+        <figure><img src="assets/shot-skill.jpg" alt="The Phoenix Swarm ultimate skill firing 48 seeking missiles" width="540" height="960" loading="lazy"><figcaption>Ultimate skills</figcaption></figure>
+        <figure><img src="assets/shot-boss.jpg" alt="Boss fight against the Viridian Hive-Queen with bullet walls" width="540" height="960" loading="lazy"><figcaption>Boss fights</figcaption></figure>
+        <figure><img src="assets/shot-phase.jpg" alt="A boss entering its second rage phase" width="540" height="960" loading="lazy"><figcaption>Rage phases</figcaption></figure>
+        <figure><img src="assets/shot-hangar.jpg" alt="Hangar showing the Falcon and six other ships" width="540" height="960" loading="lazy"><figcaption>Hangar</figcaption></figure>
+        <figure><img src="assets/shot-map.jpg" alt="Campaign stage map" width="540" height="960" loading="lazy"><figcaption>Campaign map</figcaption></figure>
       </div>
     </div>
   </section>
@@ -490,11 +474,11 @@
   <section>
     <div class="wrap">
       <div class="final-cta">
-        <p class="section-kicker">The Vault is open</p>
-        <h2>Start clearing. Keep collecting.</h2>
-        <p>Play free on Android, take the campaign offline and make every return count with
-        Daily Drops and Vault Collections.</p>
-        <a class="btn" href="https://play.google.com/store/apps/details?id=com.littlejoygames.blockvault" rel="noopener">Play Block Vault on Google Play</a>
+        <p class="section-kicker">Pilots wanted</p>
+        <h2>Launch. Upgrade. Take back the galaxy.</h2>
+        <p>Play free on Android, anywhere and without an account. Your progress is saved on your
+        device.</p>
+        <a class="btn" href="https://play.google.com/store/apps/details?id=com.starassault.game" rel="noopener">Play Star Assault on Google Play</a>
       </div>
     </div>
   </section>
@@ -502,14 +486,13 @@
   <footer>
     <div class="wrap foot-row">
       <div>
-        <strong style="color:var(--text)">Block Vault</strong> — Neon Block Puzzle<br>
-        &copy; 2026. Free to play, contains ads.
+        <strong style="color:var(--text)">Star Assault</strong> — Galaxy Shooter<br>
+        &copy; 2026 LittleJoy Games. Free to play, contains ads.
       </div>
       <nav class="foot-links">
         <a href="privacy.html">Privacy Policy</a>
-        <a href="../starassault/">Star Assault</a>
-        <a href="../bubble-shooter/">Bubble Shooter</a>
-        <a href="../">Fruit Rain Kids</a>
+        <a href="../blockvault/">Block Vault</a>
+        <a href="https://play.google.com/store/apps/details?id=com.littlejoygames.fruitrainkids" rel="noopener">Fruit Rain Kids</a>
         <a href="mailto:chiradeep.banerjee72@gmail.com">Contact</a>
       </nav>
     </div>
