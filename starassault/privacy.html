@@ -38,6 +38,7 @@
     p { margin-top: 0; margin-bottom: 16px; }
     ul { margin-top: 0; margin-bottom: 16px; padding-left: 2em; }
     li + li { margin-top: .25em; }
+    h3 { margin: 20px 0 6px; font-size: 1.1em; font-weight: 600; }
     a { color: #0969da; text-decoration: none; }
     a:hover { text-decoration: underline; }
     table { border-collapse: collapse; width: 100%; margin-bottom: 16px; }
@@ -56,11 +57,12 @@
 
   <h1>Privacy Policy for Star Assault</h1>
   <p class="meta">Applies to the Android app <strong>Space Shooter: Star Assault</strong> (package <code>com.littlejoygames.starassault</code>).<br>
-  Last updated: 30 September 2026</p>
+  Last updated: 2 October 2026</p>
 
   <p>Star Assault is a single-player arcade shooter. There is no account, no login, no chat and no
   social feature, and the game has no backend server of its own. This policy explains the data
-  handled by the game and by the Google advertising and consent services used to fund it.</p>
+  handled by the game and by the Google advertising, consent, analytics and crash-reporting
+  services it uses.</p>
 
   <h2>Who we are</h2>
   <p>Star Assault is developed and published by LittleJoy Games, an independent developer,
@@ -125,9 +127,40 @@
   and in the <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Google Privacy Policy</a>.</p>
 
   <h2>Analytics and crash reporting</h2>
-  <p>Star Assault does not include a separate analytics or crash-reporting SDK. Gameplay events,
-  scores and statistics stay on your device. Google Play may provide us with aggregated install,
-  rating and stability reports as part of the Play Console.</p>
+  <p>Star Assault uses <strong>Google Firebase Analytics</strong> and <strong>Firebase Crashlytics</strong>
+  to understand how the game is played and to diagnose crashes.</p>
+
+  <h3>What is collected</h3>
+  <ul>
+    <li><strong>Gameplay events:</strong> screens opened, stages started and finished, stage and wave
+    reached, score, kills, which ship, drone and weapon were used, and which upgrades were bought.</li>
+    <li><strong>In-game economy events:</strong> coins and gems earned and spent. These are virtual
+    currencies with no real-world value and cannot be bought with money.</li>
+    <li><strong>Advertising events:</strong> when a rewarded or interstitial ad is requested,
+    completed or fails, and the outcome of the consent prompt.</li>
+    <li><strong>Crash reports:</strong> the stack trace, device model and OS version, and a short log
+    of screens visited before the crash.</li>
+    <li>A <strong>Firebase app instance ID</strong>, which groups events into sessions. It is not your
+    name, email or account, and it resets if you reinstall the game or clear its data.</li>
+  </ul>
+
+  <h3>What is not collected</h3>
+  <ul>
+    <li>We do not collect your name, email address, phone number, contacts, photos, files or precise
+    location.</li>
+    <li>The game does not read your advertising ID for analytics. Google AdMob uses it for ads &mdash;
+    see the advertising section above.</li>
+    <li>There is no account system and no player database on our servers.</li>
+  </ul>
+
+  <h3>How to turn it off</h3>
+  <p>Open <em>Settings &rarr; Share Anonymous Usage Data</em> and switch it off. This disables
+  analytics and crash reporting on the device immediately. The game stays fully playable and your
+  progress is unaffected.</p>
+
+  <h3>Retention</h3>
+  <p>Analytics data is retained by Google for up to 14 months; crash reports for up to 90 days. See
+  <a href="https://firebase.google.com/support/privacy" target="_blank" rel="noopener">https://firebase.google.com/support/privacy</a>.</p>
 
   <h2>Your choices and consent</h2>
   <p><strong>Consent for personalised ads.</strong> Where required by law (for example in the
@@ -140,6 +173,10 @@
   <p><strong>Advertising ID controls.</strong> On your device you can reset your advertising ID or
   delete it entirely via <em>Settings &rarr; Privacy &rarr; Ads</em>. Deleting it stops
   personalised advertising across all apps; you will still see ads, but non-personalised ones.</p>
+
+  <p><strong>Analytics and crash reporting.</strong> Open <em>Settings &rarr; Share Anonymous Usage
+  Data</em> inside the game and switch it off to disable Firebase Analytics and Crashlytics on your
+  device immediately. The game stays fully playable and your progress is unaffected.</p>
 
   <p><strong>Rewarded ads are optional.</strong> You never have to watch a rewarded ad to play the
   campaign; they only grant bonus coins, gems, revives and similar extras.</p>
@@ -159,8 +196,8 @@
   <h2>Data retention</h2>
   <p>Game progress remains on your device until you clear app storage or uninstall the app, subject
   to Android backup. Advertising information is retained by Google under the retention settings and
-  schedules applicable to AdMob. We do not operate our own player-account database and do not
-  receive your gameplay data.</p>
+  schedules applicable to AdMob. Analytics and crash data are retained as described in the
+  Analytics and crash reporting section above. We do not operate our own player-account database.</p>
 
   <h2>Your rights</h2>
   <p>Depending on where you live, you may have the right to access, correct, delete or restrict
