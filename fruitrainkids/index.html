@@ -256,6 +256,18 @@
     .check-list strong { display: block; margin-bottom: 4px; }
     .check-list span { color: var(--muted); font-family: system-ui, sans-serif; font-size: .94rem; }
 
+
+    .more-games { background: #fff; }
+    .game-cards { display: grid; grid-template-columns: repeat(3, 1fr); gap: 22px; }
+    .game-card { display: flex; flex-direction: column; padding: 28px; border: 2px solid #e4eef3; border-radius: 28px; background: #fff; box-shadow: var(--shadow); color: var(--ink); text-decoration: none; transition: transform .2s ease, border-color .2s ease; }
+    .game-card:hover { transform: translateY(-6px); border-color: var(--accent); }
+    .game-card img { width: 76px; height: 76px; margin-bottom: 18px; border-radius: 20px; box-shadow: 0 8px 20px rgba(13,83,143,.18); }
+    .game-card .game-kind { margin-bottom: 6px; color: var(--accent); font-family: system-ui, sans-serif; font-size: .74rem; font-weight: 900; letter-spacing: .12em; text-transform: uppercase; }
+    .game-card h3 { margin: 0 0 8px; font-size: 1.35rem; }
+    .game-card p { flex: 1; margin: 0 0 18px; color: var(--muted); font-family: system-ui, sans-serif; font-size: .95rem; }
+    .game-card .game-link { color: var(--accent); font-weight: 900; }
+    .more-note { margin: 28px 0 0; color: var(--muted); font-family: system-ui, sans-serif; font-size: .85rem; text-align: center; }
+
     .cta { padding-top: 0; }
     .cta-card { position: relative; display: grid; grid-template-columns: 1fr auto; gap: 40px; align-items: center; overflow: hidden; padding: 58px 64px; border-radius: 42px; color: #fff; background: linear-gradient(130deg, #0b78e4, #20b1f6); box-shadow: var(--shadow); }
     .cta-card::after { content: ""; position: absolute; width: 270px; height: 270px; right: 20%; bottom: -210px; border: 40px solid rgba(255,255,255,.12); border-radius: 50%; }
@@ -269,6 +281,7 @@
     .footer-links a:hover { text-decoration: underline; }
 
     @media (max-width: 900px) {
+      .game-cards { grid-template-columns: 1fr; max-width: 520px; margin-inline: auto; }
       .hero { min-height: auto; }
       .hero-grid { grid-template-columns: 1fr; gap: 20px; padding-top: 24px; text-align: center; }
       .hero-copy > p:not(.eyebrow) { margin-inline: auto; }
@@ -305,6 +318,7 @@
       .moment, .moment.active, .moment:hover { transform: none; }
       .parent-card { min-height: 380px; padding: 36px 30px; }
       .cta-card { padding: 44px 24px; }
+      .game-cards { grid-template-columns: 1fr; }
       .release-panel { border-radius: 30px; }
       .footer-inner { flex-direction: column; text-align: center; }
     }
@@ -325,6 +339,7 @@
         <a href="#why">Why families love it</a>
         <a href="#new">What’s new</a>
         <a href="#gameplay">Explore the app</a>
+        <a href="#more-games">More games</a>
         <a class="nav-download" href="https://play.google.com/store/apps/details?id=com.littlejoygames.fruitrainkids&amp;hl=en_IN" target="_blank" rel="noopener">Download</a>
       </div>
     </nav>
@@ -482,6 +497,40 @@
       </div>
     </section>
 
+    <section class="more-games" id="more-games">
+      <div class="wrap">
+        <div class="section-head">
+          <p class="eyebrow">More from LittleJoy Games</p>
+          <h2>Games for the bigger kids and grown-ups too</h2>
+          <p class="lead">Fruit Rain Kids is made for little learners. When the family wants something different, try our other free Android games.</p>
+        </div>
+        <div class="game-cards">
+          <a class="game-card" href="../blockvault/" style="--accent:#8e52dc">
+            <img src="../blockvault/assets/icon-192.png" alt="Block Vault app icon" width="76" height="76" loading="lazy">
+            <span class="game-kind">Block puzzle</span>
+            <h3>Block Vault</h3>
+            <p>A neon block puzzle with 2,400 levels, chain reactions, Daily Drops and unlockable Vault Collections.</p>
+            <span class="game-link">Visit Block Vault →</span>
+          </a>
+          <a class="game-card" href="../starassault/" style="--accent:#f34f91">
+            <img src="../starassault/assets/icon-192.png" alt="Star Assault app icon" width="76" height="76" loading="lazy">
+            <span class="game-kind">Space shooter</span>
+            <h3>Star Assault</h3>
+            <p>Blast through 200 stages, face 20 bosses and power up 7 ships with ultimate skills.</p>
+            <span class="game-link">Visit Star Assault →</span>
+          </a>
+          <a class="game-card" href="../bubble-shooter/" style="--accent:#0878e8">
+            <img src="../bubble-shooter/assets/icon.png" alt="Bubble Shooter app icon" width="76" height="76" loading="lazy">
+            <span class="game-kind">Arcade puzzle</span>
+            <h3>Bubble Shooter</h3>
+            <p>Aim, rebound and pop bubbles across 2,500 levels with 8 unlockable bubble themes.</p>
+            <span class="game-link">Visit Bubble Shooter →</span>
+          </a>
+        </div>
+        <p class="more-note">These games are made for older players and are separate from Fruit Rain Kids. Please see each game's page and privacy policy.</p>
+      </div>
+    </section>
+
     <section class="cta">
       <div class="wrap">
         <div class="cta-card">
@@ -503,6 +552,9 @@
       <span>© <span id="year">2026</span> LittleJoy Games. Made with care for little learners.</span>
       <div class="footer-links">
         <a href="privacy.html">Privacy Policy</a>
+        <a href="../blockvault/">Block Vault</a>
+        <a href="../starassault/">Star Assault</a>
+        <a href="../bubble-shooter/">Bubble Shooter</a>
         <a href="mailto:gameslittlejoy@gmail.com">Parent &amp; App Support</a>
       </div>
     </div>
