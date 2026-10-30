@@ -1,0 +1,180 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#120a1e">
+  <meta name="description" content="Army Surge: Zombie Siege is a free crowd-runner for Android. Pick the right gates to grow your army, blast through zombie hordes and defeat giant monster bosses across a 300-level campaign.">
+  <meta property="og:title" content="Army Surge: Zombie Siege">
+  <meta property="og:description" content="Grow your army through math gates, mow down zombie hordes and topple giant monsters. 300 levels, 13 units, Daily Challenge, Endless and Boss Rush.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://littlejoygames.github.io/armysurge/">
+  <meta property="og:image" content="https://littlejoygames.github.io/armysurge/assets/og-card.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:image" content="https://littlejoygames.github.io/armysurge/assets/og-card.png">
+  <link rel="canonical" href="https://littlejoygames.github.io/armysurge/">
+  <link rel="icon" href="assets/icon-192.png">
+  <title>Army Surge: Zombie Siege | Free Android Game</title>
+  <style>
+    /* Army Surge: hot orange and toxic green on a dusk-purple battlefield */
+    :root {
+      --night: #120a1e;
+      --deep: #1b1030;
+      --panel: #221638;
+      --line: #3a2a58;
+      --fire: #ff7a2a;
+      --gold: #ffd23f;
+      --toxic: #7ce04a;
+      --blue: #2d9cff;
+      --red: #ff3b5c;
+      --text: #f6f1ff;
+      --dim: #b9aed6;
+      --display: Bahnschrift, "Arial Black", Impact, system-ui, sans-serif;
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0; color: var(--text); background: var(--night);
+      font-family: system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      line-height: 1.6; overflow-x: hidden;
+    }
+    img { display: block; max-width: 100%; height: auto; }
+    a { color: var(--gold); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+    .wrap { width: min(1080px, calc(100% - 32px)); margin-inline: auto; }
+
+    .hero {
+      padding: 64px 0 88px;
+      background:
+        radial-gradient(760px 420px at 80% 0%, rgba(255, 122, 42, .35), transparent 62%),
+        radial-gradient(600px 420px at 0% 100%, rgba(124, 224, 74, .14), transparent 60%),
+        linear-gradient(180deg, #1c0f33, var(--night));
+    }
+    .hero-grid { display: grid; grid-template-columns: 1.1fr .9fr; gap: 40px; align-items: center; }
+    .brand { display: flex; align-items: center; gap: 14px; margin-bottom: 18px; }
+    .brand img { width: 64px; height: 64px; border-radius: 16px; box-shadow: 0 6px 24px rgba(255, 122, 42, .4); }
+    .brand span { color: var(--dim); font-size: .95rem; }
+    h1 { font-family: var(--display); font-size: clamp(2.4rem, 6vw, 4rem); line-height: 1.02; margin: 0 0 12px; text-transform: uppercase; letter-spacing: .5px; }
+    h1 em { font-style: normal; color: var(--gold); }
+    .tag { display: inline-block; background: var(--red); color: #fff; font-weight: 700; padding: 4px 12px; border-radius: 8px; font-size: .9rem; letter-spacing: 1px; }
+    .lead { color: var(--dim); font-size: 1.12rem; max-width: 34em; margin: 18px 0 26px; }
+    .soon {
+      display: inline-flex; align-items: center; gap: 10px; padding: 14px 22px; border-radius: 14px;
+      background: linear-gradient(180deg, #ffd84d, #e08a00); color: #2a1a00; font-weight: 800; font-size: 1.05rem;
+      box-shadow: 0 8px 24px rgba(255, 176, 32, .35);
+    }
+    .hero-shots { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+    .hero-shots img { border-radius: 18px; border: 2px solid var(--line); box-shadow: 0 16px 40px rgba(0, 0, 0, .5); }
+    .hero-shots img:nth-child(2) { margin-top: 42px; }
+
+    section { padding: 64px 0; }
+    h2 { font-family: var(--display); text-transform: uppercase; font-size: clamp(1.6rem, 3.6vw, 2.2rem); margin: 0 0 8px; }
+    .sub { color: var(--dim); margin: 0 0 28px; }
+    .features { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+    .card { background: var(--panel); border: 1px solid var(--line); border-radius: 18px; padding: 22px; }
+    .card h3 { margin: 0 0 6px; font-size: 1.1rem; }
+    .card p { margin: 0; color: var(--dim); font-size: .96rem; }
+    .card .ic { font-size: 1.6rem; margin-bottom: 8px; }
+    .gallery { display: grid; grid-template-columns: repeat(5, 1fr); gap: 12px; }
+    .gallery img { border-radius: 14px; border: 1px solid var(--line); }
+    .modes { display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px; }
+    .mode { border-radius: 16px; padding: 18px; background: var(--deep); border-top: 4px solid var(--c); }
+    .mode b { display: block; color: var(--c); letter-spacing: .5px; }
+    .mode span { color: var(--dim); font-size: .94rem; }
+
+    footer { border-top: 1px solid var(--line); padding: 28px 0 40px; color: var(--dim); font-size: .92rem; }
+    .foot-row { display: flex; justify-content: space-between; gap: 20px; flex-wrap: wrap; }
+    .foot-links { display: flex; gap: 16px; flex-wrap: wrap; }
+
+    @media (max-width: 860px) {
+      .hero-grid { grid-template-columns: 1fr; }
+      .features { grid-template-columns: 1fr 1fr; }
+      .gallery { grid-template-columns: repeat(3, 1fr); }
+      .modes { grid-template-columns: 1fr 1fr; }
+    }
+    @media (max-width: 520px) {
+      .features, .modes { grid-template-columns: 1fr; }
+      .gallery { grid-template-columns: 1fr 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+  <header class="hero">
+    <div class="wrap hero-grid">
+      <div>
+        <a class="brand" href="../"><img src="assets/icon-192.png" alt="Army Surge icon"><span>LittleJoy Games</span></a>
+        <span class="tag">ZOMBIE SIEGE</span>
+        <h1>Army <em>Surge</em></h1>
+        <p class="lead">Steer your squad through math gates to multiply your army, blast through zombie hordes and
+          bring down giant monster bosses. Every choice counts: pick the right gate, grab the gun upgrade, and
+          survive the siege.</p>
+        <span class="soon">&#9654; It is coming</span>
+      </div>
+      <div class="hero-shots">
+        <img src="assets/shot-horde.jpg" alt="A squad of soldiers shooting at an incoming zombie horde" width="540" height="960">
+        <img src="assets/shot-boss.jpg" alt="The army firing at a giant monster boss" width="540" height="960">
+      </div>
+    </div>
+  </header>
+
+  <section>
+    <div class="wrap">
+      <h2>Grow. Fight. Survive.</h2>
+      <p class="sub">A crowd runner with real battles at the end of every road.</p>
+      <div class="features">
+        <div class="card"><div class="ic">&#10133;</div><h3>Math gates</h3><p>Choose between 2 to 4 gates: add, multiply, or grab coins, a gun upgrade, a shield or a free airstrike instead.</p></div>
+        <div class="card"><div class="ic">&#129503;</div><h3>Zombie hordes</h3><p>Walkers, runners, armoured brutes, exploding bloaters and towering giants come in waves of every shape.</p></div>
+        <div class="card"><div class="ic">&#128126;</div><h3>Giant monsters</h3><p>Six monster bosses that slam, spit, summon and enrage, with mega bosses every 10 levels.</p></div>
+        <div class="card"><div class="ic">&#127894;</div><h3>13 army units</h3><p>From the Rookie to the Flame Trooper, Red Titan and Golden Legion, each with its own weapon and look.</p></div>
+        <div class="card"><div class="ic">&#128506;</div><h3>300-level campaign</h3><p>Ten chapters across six battlefields: ruined city, desert, frozen pass, toxic swamp, graveyard and volcano.</p></div>
+        <div class="card"><div class="ic">&#11014;</div><h3>Upgrades &amp; rewards</h3><p>Raise troops, firepower, fire rate and income, and collect daily rewards, lucky spins and bonus chests.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section style="padding-top:0">
+    <div class="wrap">
+      <h2>Game modes</h2>
+      <p class="sub">When the campaign rests for the day, the fight goes on.</p>
+      <div class="modes">
+        <div class="mode" style="--c:#2d9cff"><b>CAMPAIGN</b><span>300 levels with themed Rush, Gauntlet, Treasure, Elite and Night Raid stages.</span></div>
+        <div class="mode" style="--c:#ffc21a"><b>DAILY CHALLENGE</b><span>A new twist every day, from Titan Horde to Glass Cannon.</span></div>
+        <div class="mode" style="--c:#35c06f"><b>ENDLESS</b><span>Stage after stage, each harder than the last. How far can you go?</span></div>
+        <div class="mode" style="--c:#ff4d4d"><b>BOSS RUSH</b><span>Monster after monster with no breaks in between.</span></div>
+      </div>
+    </div>
+  </section>
+
+  <section style="padding-top:0">
+    <div class="wrap">
+      <h2>Screenshots</h2>
+      <div class="gallery">
+        <img src="assets/shot-title.jpg" alt="Home screen with upgrades" loading="lazy" width="540" height="960">
+        <img src="assets/shot-gates.jpg" alt="A row of gates including a shield gate" loading="lazy" width="540" height="960">
+        <img src="assets/shot-death.jpg" alt="A boss exploding as it is defeated" loading="lazy" width="540" height="960">
+        <img src="assets/shot-squad.jpg" alt="The squad screen with army units" loading="lazy" width="540" height="960">
+        <img src="assets/shot-modes.jpg" alt="The game modes screen" loading="lazy" width="540" height="960">
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="wrap foot-row">
+      <div>
+        <strong style="color:var(--text)">Army Surge</strong> — Zombie Siege<br>
+        &copy; 2026 LittleJoy Games. Free to play, contains ads.
+      </div>
+      <nav class="foot-links">
+        <a href="privacy.html">Privacy Policy</a>
+        <a href="../blockvault/">Block Vault</a>
+        <a href="../bubble-shooter/">Bubble Shooter</a>
+        <a href="../starassault/">Star Assault</a>
+        <a href="../fruitrainkids/">Fruit Rain Kids</a>
+        <a href="mailto:gameslittlejoy@gmail.com">Contact</a>
+      </nav>
+    </div>
+  </footer>
+
+</body>
+</html>
